@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Контакты — Гильдия русских предпринимателей</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z' fill='%231F3D2E'/%3E%3Cpath d='M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z' fill='%231F3D2E'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+<style>
+  .contacts-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:760px){ .contacts-grid { grid-template-columns:1fr; } }
+  .doc-block { background:#fff; border:1px solid var(--line-light); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); }
+  .doc-block h3 { font-size:17px; font-weight:700; margin-bottom:12px; }
+  .doc-block p { font-size:15px; color:var(--text-2); margin-bottom:8px; }
+  .doc-block p:last-child { margin-bottom:0; }
+  .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="guild-mark" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z" fill="currentColor"/><path d="M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><svg class="brand-mark"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+    <nav class="nav" id="nav">
+      <a href="about.html">О Гильдии</a>
+      <a href="people.html">Участники</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="meetings.html">Встречи</a>
+      <a href="contacts.html" class="current">Контакты</a>
+    </nav>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-primary" href="join.html">Стать участником</a>
+      <button class="burger" onclick="toggleNav()" aria-label="Меню"><svg class="icon lg"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <span class="region-chip"><svg class="icon sm"><use href="#i-pin"/></svg> Санкт-Петербург · участники по всей России</span>
+    <h1>Контакты</h1>
+    <p class="sub">Связаться с Гильдией: вопросы, партнёрства, заявки и жалобы.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="contacts-grid">
+      <div class="doc-block">
+        <h3>Каналы связи</h3>
+        <p><svg class="icon md" style="vertical-align:-3px; color:var(--brand);"><use href="#i-mail"/></svg> Общие вопросы и партнёрства: [email — появится после запуска домена]</p>
+        <p><svg class="icon md" style="vertical-align:-3px; color:var(--brand);"><use href="#i-phone"/></svg> Телефон: [появится после запуска домена]</p>
+        <p><strong>Резервный канал:</strong> помимо мессенджеров, Гильдия держит канал, не зависящий от них — почта и телефон выше. Если основной канал недоступен, пишите на резерв.</p>
+        <p><strong>Жалобы:</strong> через кнопку «Сообщить о проблеме» в каталоге или на [email]. Срок рассмотрения — до 5 рабочих дней, при признаках обмана — до 2 рабочих дней.</p>
+      </div>
+      <div class="doc-block">
+        <h3>Ответственные</h3>
+        <p>Каталог и карточки участников: [имя, контакт].</p>
+        <p>Заявки и верификация: [имя, контакт].</p>
+        <p>Встречи и календарь: [имя, контакт].</p>
+        <p>Модерация и жалобы: [имя, контакт].</p>
+        <p style="font-size:13px; color:var(--text-3);">Заполняется рабочей группой после распределения ролей.</p>
+      </div>
+    </div>
+
+    <div class="contacts-grid" style="margin-top:20px;">
+      <div class="doc-block">
+        <h3>Написать нам</h3>
+        <form class="form" onsubmit="event.preventDefault(); if(document.getElementById('hpField').value){this.reset();toast('Сообщение принято');return;} this.reset(); toast('Сообщение записано. В полной версии оно уйдёт на почту Гильдии.');">
+          <div><label>Имя</label><input type="text" required placeholder="Как к вам обращаться"></div>
+          <div><label>Способ связи</label><input type="text" required placeholder="Email или телефон"></div>
+          <div><label>Сообщение</label><textarea required placeholder="Вопрос, предложение, партнёрство"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="hpField">Не заполняйте</label><input id="hpField" type="text" tabindex="-1" autocomplete="off"></div>
+          <label class="checkbox"><input type="checkbox" required> Согласен на обработку персональных данных согласно <a href="privacy.html" target="_blank" rel="noopener" style="color:var(--brand); text-decoration:underline;">политике</a></label>
+          <button class="btn btn-primary" type="submit">Отправить</button>
+        </form>
+      </div>
+      <div class="doc-block">
+        <h3>Документы</h3>
+        <p><a href="rules.html" style="color:var(--brand); text-decoration:underline;">Пользовательские правила каталога и площадки</a></p>
+        <p><a href="privacy.html" style="color:var(--brand); text-decoration:underline;">Политика обработки персональных данных</a></p>
+        <p><a href="verification.html" style="color:var(--brand); text-decoration:underline;">Регламент верификации участников</a></p>
+        <p><a href="complaints.html" style="color:var(--brand); text-decoration:underline;">Регламент рассмотрения жалоб и блокировок</a></p>
+        <p><a href="soglasiya.html" style="color:var(--brand); text-decoration:underline;">Пакет согласий кандидата и участника</a></p>
+        <h3 style="margin-top:20px;">Реквизиты</h3>
+        <p>[Наименование НКО, ИНН, ОГРН, адрес — будут добавлены после регистрации.]</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:12px;"><svg class="brand-mark" style="width:36px;height:36px;"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+        <p>Санкт-Петербург · участники по всей России</p>
+        <p style="margin-top:8px;">Реквизиты: будут добавлены после регистрации НКО.</p>
+      </div>
+      <div><h4>Контакты</h4><p>Email: [появится после запуска домена]</p><p>Телефон: [появится после запуска домена]</p></div>
+      <div><h4>Документы</h4><a href="rules.html">Правила площадки</a><a href="privacy.html">Политика обработки данных</a><a href="join.html">Стать участником</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Гильдия русских предпринимателей</span><span>Держим слово, фиксируем договорённости и отвечаем за свою работу</span></div>
+  </div>
+</footer>
+</body>
+</html>

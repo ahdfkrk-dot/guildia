@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>О Гильдии — Гильдия русских предпринимателей</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z' fill='%231F3D2E'/%3E%3Cpath d='M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z' fill='%231F3D2E'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+<style>
+  .doc-list { padding-left:20px; display:grid; gap:8px; font-size:15px; color:var(--text-2); margin-bottom:8px; }
+  .chips { display:flex; flex-wrap:wrap; gap:10px; }
+  .chip { padding:8px 15px; border-radius:var(--radius-pill); background:var(--brand-light); color:var(--brand); font-size:13px; font-weight:600; }
+  .doc-block { background:#fff; border:1px solid var(--line-light); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); margin-bottom:20px; }
+  .doc-block h3 { font-size:18px; font-weight:700; margin-bottom:10px; }
+  .doc-block p { font-size:15px; color:var(--text-2); margin-bottom:10px; }
+  .doc-block p:last-child { margin-bottom:0; }
+  .warn-block { background:var(--bg-warm); border:1px dashed var(--line); }
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="guild-mark" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z" fill="currentColor"/><path d="M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M15 12l-8.4 8.4a2.1 2.1 0 0 1-3-3L12 9"/><path d="M17.6 15L22 10.6"/><path d="M20.9 11.7l-1.3-1.3c-.6-.6-.9-1.4-.9-2.2v-.9l-2.7-2.7A5.6 5.6 0 0 0 12.1 3H9l.9.8A6.2 6.2 0 0 1 12 8.4V10l2 2h2.5l2.3 2z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><svg class="brand-mark"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+    <nav class="nav" id="nav">
+      <a href="about.html" class="current">О Гильдии</a>
+      <a href="people.html">Участники</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="meetings.html">Встречи</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-primary" href="join.html">Стать участником</a>
+      <button class="burger" onclick="toggleNav()" aria-label="Меню"><svg class="icon lg"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <span class="region-chip"><svg class="icon sm"><use href="#i-pin"/></svg> Санкт-Петербург · участники по всей России</span>
+    <h1>О Гильдии</h1>
+    <p class="sub">Сообщество для деловых связей, обмена опытом и взаимопомощи, выросшее из почти двухлетнего сообщества предпринимателей Русской Общины.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="doc-block">
+      <h3>Кто мы</h3>
+      <p>Гильдия выросла из сообщества предпринимателей, которое существует почти два года. За это время к сообществу в разное время присоединились около девяноста человек; активное ядро — те, кто работает регулярно: мастермайнды, микрогруппы, деловые встречи, разборы задач друг друга.</p>
+      <p>Гильдия — следующий шаг этого сообщества: не реестр визиток, а рабочая среда, где качество и ответственность — норма.</p>
+    </div>
+
+    <div class="doc-block warn-block">
+      <h3>Что мы принципиально не обещаем</h3>
+      <p>Мы никого не уговариваем и ничего не навязываем. Мы не обещаем лёгких денег и гарантированного роста дохода. Гильдия — не схема заработка, а среда: общение, работа, развитие, заработок и взаимопомощь людей, которые отвечают за своё слово.</p>
+    </div>
+
+    <div class="doc-block">
+      <h3>Что участник получает на практике</h3>
+      <ul class="doc-list">
+        <li>Клиентов и заказы — через каталог, рекомендации и модель «покупаем у своих».</li>
+        <li>Связи и партнёров — деловые встречи, проектные группы, разбор задач в мастермайндах.</li>
+        <li>Знания и экспертизу — лекции, мастер-классы, разборы, наставничество.</li>
+        <li>Поддержку в сложной ситуации — свои не остаются одни: юридическая, деловая и человеческая помощь сообщества.</li>
+        <li>Кадры — вакансии и резюме внутри каталога, взаимодействие с колледжами и вузами.</li>
+        <li>Представление интересов — голос сообщества в диалоге об условиях ведения малого бизнеса.</li>
+      </ul>
+    </div>
+
+    <div class="doc-block">
+      <h3>Как мы отбираем участников</h3>
+      <p>Заявка → знакомство с куратором → проверка данных и рекомендаций → решение → карточка в каталоге. Подача заявки не гарантирует принятия. Статус участника всегда поясняет, что именно проверено; термин «проверенный» мы применяем только после утверждения процедуры проверки и публикуем её описание.</p>
+      <p><a href="verification.html" style="color:var(--brand); font-weight:600; text-decoration:underline; text-underline-offset:3px;">Регламент верификации участников</a></p>
+    </div>
+
+    <div class="section-head" style="margin-top:36px;">
+      <h2>Форматы работы</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-users"/></svg></div><h3>Мастермайнды</h3><p>Регулярные разборы задач в малых группах.</p></div>
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-heart"/></svg></div><h3>Микрогруппы</h3><p>Устойчивые круги с взаимной ответственностью за результат.</p></div>
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-search"/></svg></div><h3>Деловые встречи</h3><p>Знакомства, сделки и поиск партнёров.</p></div>
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-hammer"/></svg></div><h3>Проектные группы</h3><p>Совместные проекты и социальные инициативы.</p></div>
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-book"/></svg></div><h3>Наставничество</h3><p>Опытные участники ведут начинающих.</p></div>
+      <div class="format"><div class="ic"><svg class="icon lg"><use href="#i-cal"/></svg></div><h3>Беседы об этике и ответственности</h3><p>Включая духовные беседы (в том числе с отцом Иеронимом); участие добровольное.</p></div>
+    </div>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2>Стратегический совет</h2>
+      <p>Опытные предприниматели, наставники и эксперты, которые помогают Гильдии видеть дальше текущих задач.</p>
+    </div>
+    <div class="doc-block">
+      <p><strong>Роль:</strong> совет по стратегии и приоритетам; участие в утверждении процедуры проверки и правил каталога; рассмотрение апелляций; наставничество.</p>
+      <p><strong>Принципы:</strong> участие добровольное и безвозмездное; статус члена Совета не даёт коммерческих привилегий в каталоге; решения протоколируются.</p>
+      <p><strong>Состав:</strong> [фото, имя, сфера, краткая справка — заполняется после утверждения состава рабочей группой].</p>
+    </div>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2>Проекты и общественная польза</h2>
+      <p>Часть создаваемой экономической пользы направляется на патриотические, православные и гуманитарные проекты. О конкретных делах рассказываем фактами и с согласия участников.</p>
+    </div>
+    <div class="doc-block">
+      <h3>Формат карточки проекта</h3>
+      <p>Задача → что сделали → результат в фактах → кто участвовал → чему научились. Публикуем только состоявшиеся или идущие дела; если проект не достиг цели — честный разбор полезнее витрины.</p>
+      <p style="font-size:13px; color:var(--text-3);">Пример оформления: участнику-производителю срочно понадобился юрист для договора поставки — через каталог и микрогруппу договор проверен и подписан в срок, поставка состоялась. [Заменяется реальными кейсами ответственного за контент.]</p>
+    </div>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2>Наши принципы</h2>
+    </div>
+    <div class="chips">
+      <span class="chip">Вера</span><span class="chip">Честь</span><span class="chip">Польза</span><span class="chip">Дело</span><span class="chip">Ответственность</span><span class="chip">Созидание</span><span class="chip">Слово важнее договора</span><span class="chip">Репутация дороже денег</span><span class="chip">Свои не остаются одни</span>
+    </div>
+
+    <div class="cta-band" style="margin:44px 0 8px;">
+      <div><h2>Гильдия открыта для тех, кто готов работать и отвечать за слово</h2><p>Вступление начинается с короткой заявки и знакомства с куратором.</p></div>
+      <a class="btn btn-light" href="join.html">Подать заявку</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:12px;"><svg class="brand-mark" style="width:36px;height:36px;"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+        <p>Санкт-Петербург · участники по всей России</p>
+        <p style="margin-top:8px;">Реквизиты: будут добавлены после регистрации НКО.</p>
+      </div>
+      <div><h4>Контакты</h4><p>Email: [появится после запуска домена]</p><p>Телефон: [появится после запуска домена]</p></div>
+      <div><h4>Документы</h4><a href="rules.html">Правила площадки</a><a href="privacy.html">Политика обработки данных</a><a href="join.html">Стать участником</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Гильдия русских предпринимателей</span><span>Держим слово, фиксируем договорённости и отвечаем за свою работу</span></div>
+  </div>
+</footer>
+</body>
+</html>

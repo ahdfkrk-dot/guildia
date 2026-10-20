@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пакет согласий кандидата и участника Гильдии — служебный документ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z' fill='%231F3D2E'/%3E%3Cpath d='M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z' fill='%231F3D2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#FFFFFF; --text:#222222; --text-2:#717171;
+    --line:#DDDDDD; --bg-soft:#F7F7F7;
+    --brand:#1F3D2E; --brand-light:#EAF2EC;
+    --accent:#C8885A; --warn:#B8860B; --warn-soft:#FDF3E0;
+    --font:'Inter',-apple-system,'Segoe UI',sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--font); background:var(--bg); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .container { max-width:900px; margin:0 auto; padding:0 24px; }
+  .doc { padding:44px 0 72px; }
+  .draft-badge { display:inline-flex; align-items:center; gap:7px; padding:6px 12px; border-radius:999px; background:var(--warn-soft); color:var(--warn); font-size:12px; font-weight:700; margin-bottom:16px; }
+  .doc h1 { font-size:28px; font-weight:800; letter-spacing:-.02em; margin-bottom:8px; }
+  .doc .subtitle { color:var(--text-2); font-size:15px; margin-bottom:20px; }
+  .passport { border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:grid; gap:6px; font-size:14px; margin-bottom:24px; background:var(--bg-soft); }
+  .passport b { font-weight:600; }
+  .intro { font-size:14px; color:#333; line-height:1.65; margin-bottom:26px; }
+  .intro ul { padding-left:20px; margin-top:8px; }
+  .intro li { margin-bottom:5px; }
+
+  .form-block { border:1px solid var(--line); border-radius:16px; padding:28px; margin-bottom:26px; page-break-after:always; }
+  .form-block:last-of-type { page-break-after:auto; }
+  .form-block h2 { font-size:19px; font-weight:800; margin-bottom:4px; }
+  .form-block .fb-sub { color:var(--text-2); font-size:13px; margin-bottom:18px; }
+  .form-block p { font-size:14px; color:#333; margin-bottom:10px; line-height:1.65; }
+  .form-block ol, .form-block ul { padding-left:20px; margin-bottom:12px; }
+  .form-block li { font-size:14px; color:#333; margin-bottom:6px; line-height:1.6; }
+  .ph { background:#FFF6E5; border-bottom:2px dashed var(--accent); padding:0 3px; font-weight:600; white-space:nowrap; }
+  .blank { display:inline-block; min-width:180px; border-bottom:1px solid #999; }
+  .blank.w-sm { min-width:90px; }
+  .blank.w-lg { min-width:320px; }
+  .fields { display:grid; gap:10px; margin:16px 0; font-size:14px; }
+  .chk-row { display:flex; align-items:flex-start; gap:10px; font-size:14px; margin-bottom:8px; }
+  .chk { width:16px; height:16px; border:1.5px solid #555; border-radius:3px; flex-shrink:0; margin-top:2px; }
+  .sign-row { display:flex; justify-content:space-between; gap:24px; margin-top:26px; font-size:14px; flex-wrap:wrap; }
+  .sign-row .s { display:flex; align-items:flex-end; gap:8px; }
+  .sign-line { display:inline-block; width:180px; border-bottom:1px solid #999; }
+  .note { border-left:3px solid var(--brand); background:var(--brand-light); padding:14px 16px; border-radius:0 10px 10px 0; font-size:13px; color:var(--brand); margin:16px 0; }
+  table.spread { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  table.spread th, table.spread td { border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top; }
+  table.spread th { background:var(--bg-soft); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  @media print { .draft-badge { display:none; } .doc { padding:0; } .form-block { border:0; padding:0 0 8mm 0; } .ph { background:none; border-bottom:1px solid #999; } }
+</style>
+</head>
+<body>
+<main class="doc">
+  <div class="container">
+    <span class="draft-badge">Служебный документ · проект версии 1.0 · реквизиты НКО вносятся после регистрации</span>
+    <h1>Пакет согласий кандидата и участника Гильдии</h1>
+    <p class="subtitle">Гильдия русских предпринимателей · три документа</p>
+
+    <div class="passport">
+      <span><b>Версия пакета:</b> 1.0 (проект)</span>
+      <span><b>Дата утверждения:</b> ____________</span>
+      <span><b>Оператор:</b> <span class="ph">{{ОПЕРАТОР}}</span>, ИНН <span class="ph">{{ИНН}}</span>, ОГРН <span class="ph">{{ОГРН}}</span>, адрес <span class="ph">{{АДРЕС}}</span></span>
+      <span><b>Ответственный за обработку ПДн:</b> <span class="ph">{{DPO}}</span></span>
+    </div>
+
+    <div class="intro">
+      <p><b>Порядок применения.</b> Пакет подписывается кандидатом при личном знакомстве либо фиксируется электронно при подаче заявки через сайт. Электронная фиксация означает: версия текста согласий, дата и время отметки, IP-адрес и пользовательский агент записываются в журнал обработки заявок и хранятся в сроки, установленные Политикой обработки персональных данных. Бумажный экземпляр хранится у Оператора.</p>
+      <ul>
+        <li>Форма 1 — Декларация о разделении принципов Гильдии (внутренний документ организации).</li>
+        <li>Форма 2 — Согласие на обработку персональных данных (ст. 9 ФЗ-152).</li>
+        <li>Форма 3 — Согласие на обработку персональных данных, разрешённых для распространения (ст. 10.1 ФЗ-152): публикация карточки в каталоге.</li>
+      </ul>
+      <p>Все три формы обязательны для рассмотрения заявки. Форма 3 может быть подписана позже — участник вправе сначала войти в Гильдию и отложить публикацию карточки.</p>
+    </div>
+
+    <!-- ФОРМА 1 -->
+    <section class="form-block">
+      <h2>Форма 1. Декларация о разделении принципов Гильдии</h2>
+      <p class="fb-sub">Внутренний документ Гильдии · приложение к заявке на вступление</p>
+      <p>Я, <span class="blank w-lg"></span> (ФИО), подавший(ая) заявку на вступление в Гильдию русских предпринимателей № <span class="blank w-sm"></span> от «<span class="blank w-sm"></span>» <span class="blank w-sm"></span> 20__ г., осознавая добровольность вступления, декларирую следующее:</p>
+      <ol>
+        <li>Разделяю принципы Гильдии: вера, честь, польза, дело, ответственность, созидание; слово важнее договора; репутация дороже денег; свои не остаются одни.</li>
+        <li>Понимаю, что Гильдия не обещает лёгких денег и гарантированного роста дохода, и не буду ожидать или требовать таких гарантий.</li>
+        <li>Обязуюсь соблюдать Пользовательские правила каталога и площадки Гильдии, включая требования к достоверности объявлений, отзывам и жалобам.</li>
+        <li>Принимаю, что нарушение принципов и правил может повлечь санкции: предупреждение, приостановку, блокировку или исключение из Гильдии в порядке, установленном Правилами.</li>
+        <li>Подтверждаю, что вступаю добровольно, по собственным ценностям и профессиональным интересам, а не по этническому, региональному или партийному признаку.</li>
+        <li>Осведомлён(а), что подача заявки не гарантирует принятия в Гильдию.</li>
+      </ol>
+      <div class="sign-row">
+        <span class="s">Подпись: <span class="sign-line"></span></span>
+        <span class="s">Дата: <span class="sign-line" style="width:120px;"></span></span>
+        <span class="s">Принял (куратор): <span class="sign-line"></span></span>
+      </div>
+    </section>
+
+    <!-- ФОРМА 2 -->
+    <section class="form-block">
+      <h2>Форма 2. Согласие на обработку персональных данных</h2>
+      <p class="fb-sub">В соответствии со ст. 9 Федерального закона от 27.07.2006 № 152-ФЗ</p>
+
+      <p><b>1. Субъект персональных данных:</b></p>
+      <div class="fields">
+        <span>ФИО: <span class="blank w-lg"></span></span>
+        <span>Документ, удостоверяющий личность (заполняется при бумажном подписании): <span class="blank w-lg"></span></span>
+        <span>Контактный телефон: <span class="blank"></span> Email: <span class="blank"></span></span>
+        <span>Адрес (по желанию): <span class="blank w-lg"></span></span>
+      </div>
+      <p>При электронной подаче идентификация субъекта осуществляется по данным заявки и учётной записи на Площадке.</p>
+
+      <p><b>2. Оператор:</b> <span class="ph">{{ОПЕРАТОР}}</span>; адрес: <span class="ph">{{АДРЕС}}</span>; ИНН <span class="ph">{{ИНН}}</span>, ОГРН <span class="ph">{{ОГРН}}</span>; email: <span class="ph">{{EMAIL_ОПЕРАТОРА}}</span>.</p>
+
+      <p><b>3. Цель обработки:</b> рассмотрение заявки на вступление в Гильдию; проведение процедуры знакомства и проверки; формирование и ведение реестра участников; переписка с кандидатом и участником; обеспечение работы учётной записи и личного кабинета; информирование о мероприятиях Гильдии и изменениях, касающихся малого и среднего бизнеса; исполнение требований законодательства РФ.</p>
+
+      <p><b>4. Перечень обрабатываемых персональных данных:</b> фамилия, имя, отчество; контактный телефон; адрес электронной почты; регион и город; сведения о предпринимательской деятельности (тип участника, наименование компании или проекта, ИНН/ОГРНИП/ОГРН, сфера, стаж); описание деятельности и компетенций; ссылки на сайт и социальные сети; запрос к Гильдии и готовность быть полезным; сведения о рекомендациях; сведения о согласиях и декларациях; данные учётной записи (пароль в хешированном виде, роль, активность); технические данные (IP, cookie, аналитика).</p>
+
+      <p><b>5. Перечень действий и способы обработки:</b> сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача (предоставление, доступ) ограниченному кругу лиц, указанных в п. 6.3 Политики обработки персональных данных, обезличивание, блокирование, удаление, уничтожение. Обработка смешанная: с использованием средств автоматизации и без них.</p>
+
+      <p><b>6. Срок действия и порядок отзыва:</b> согласие действует с момента подписания (электронной фиксации) до достижения целей обработки либо до отзыва. Срок хранения данных определён разделом 7 Политики обработки персональных данных. Отзыв направляется письмом на <span class="ph">{{EMAIL_ОПЕРАТОРА}}</span> или почтой по адресу Оператора с пометкой «Персональные данные»; обработка прекращается в сроки, установленные законом, за исключением случаев, когда хранение требуется по закону или для защиты законных интересов.</p>
+
+      <div class="sign-row">
+        <span class="s">Подпись субъекта: <span class="sign-line"></span></span>
+        <span class="s">Дата: <span class="sign-line" style="width:120px;"></span></span>
+      </div>
+      <div class="note">Электронная фиксация: версия текста Ф2-1.0, дата и время, IP, пользовательский агент — записываются в журнал обработки заявок.</div>
+    </section>
+
+    <!-- ФОРМА 3 -->
+    <section class="form-block">
+      <h2>Форма 3. Согласие на обработку персональных данных, разрешённых для распространения</h2>
+      <p class="fb-sub">В соответствии со ст. 10.1 Федерального закона от 27.07.2006 № 152-ФЗ · публикация карточки в открытом каталоге</p>
+
+      <p>Я, <span class="blank w-lg"></span> (ФИО), участник Гильдии русских предпринимателей, разрешаю Оператору (<span class="ph">{{ОПЕРАТОР}}</span>) обработку нижеуказанных персональных данных путём их распространения — публикации в открытом каталоге Площадки, доступном неограниченному кругу лиц.</p>
+
+      <p><b>Перечень данных, разрешённых для распространения</b> (отметьте разрешённое; неотмеченное не публикуется):</p>
+      <table class="spread">
+        <thead><tr><th style="width:34px;">✓</th><th>Данные</th><th style="width:150px;">Запрет / условие (заполняется субъектом)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chk"></span></td><td>Наименование компании / имя предпринимателя</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Город и регион</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Сфера деятельности и конкретные услуги</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Описание деятельности (текст карточки)</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Примеры работ, кейсы, фото и видео, предоставленные участником</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Контактный email</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Контактный телефон</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Сайт и социальные сети</td><td></td></tr>
+          <tr><td><span class="chk"></span></td><td>Логотип / фото участника</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <p><b>Условия и запреты, установленные субъектом (при наличии):</b></p>
+      <div class="chk-row"><span class="chk"></span><span>Запрещаю передачу отмеченных данных третьим лицам в маркетинговых и рекламных целях без моего отдельного согласия.</span></div>
+      <div class="chk-row"><span class="chk"></span><span>Иные условия: <span class="blank w-lg"></span></span></div>
+
+      <p><b>Срок и порядок отзыва:</b> согласие действует в течение периода участия в Гильдии либо до отзыва. Отзыв направляется на <span class="ph">{{EMAIL_ОПЕРАТОРА}}</span>; публичная карточка удаляется в срок до 3 рабочих дней с момента получения отзыва. Установленные выше запреты и условия действуют с момента подписания и не имеют срока.</p>
+      <p>Настоящее согласие является отдельным от согласия на обработку персональных данных (Форма 2) и не подменяет его. Чувствительные регистрационные данные (ИНН/ОГРН в полном виде, документы, паспортные данные) в открытый каталог не публикуются ни при каких условиях.</p>
+
+      <div class="sign-row">
+        <span class="s">Подпись субъекта: <span class="sign-line"></span></span>
+        <span class="s">Дата: <span class="sign-line" style="width:120px;"></span></span>
+        <span class="s">Состав карточки сверил (модератор): <span class="sign-line"></span></span>
+      </div>
+      <div class="note">Электронная фиксация: версия текста Ф3-1.0, отметки чек-листа, дата и время, IP, пользовательский агент — записываются в журнал; состав публикации карточки в админ-панели должен совпадать с отметками этой формы.</div>
+    </section>
+
+    <div class="intro">
+      <p><b>Связка с формами сайта.</b> Чекбокс «Разделяю принципы Гильдии» (join.html, шаг 3) = Форма 1. Чекбокс «Согласен на обработку персональных данных» = Форма 2. Чекбокс «Согласен на публикацию карточки» = Форма 3; в боевой версии админ-панель показывает модератору чек-лист Формы 3, и публикация контактов ограничивается отметками субъекта.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

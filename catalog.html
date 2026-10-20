@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Каталог — Гильдия русских предпринимателей</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z' fill='%231F3D2E'/%3E%3Cpath d='M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z' fill='%231F3D2E'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="guild-mark" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z" fill="currentColor"/><path d="M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><svg class="brand-mark"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+    <nav class="nav" id="nav">
+      <a href="about.html">О Гильдии</a>
+      <a href="people.html">Участники</a>
+      <a href="catalog.html" class="current">Каталог</a>
+      <a href="meetings.html">Встречи</a>
+      <a href="contacts.html">Контакты</a>
+   </nav>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-primary" href="join.html">Стать участником</a>
+      <button class="burger" onclick="toggleNav()" aria-label="Меню"><svg class="icon lg"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <span class="region-chip"><svg class="icon sm"><use href="#i-pin"/></svg> Санкт-Петербург · участники по всей России</span>
+    <h1>Каталог</h1>
+    <p class="sub">Услуги, товары, вакансии и резюме участников Гильдии. Статусы в карточках поясняют, что именно проверено.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <div class="panel">
+      <div class="search-row">
+        <input class="search-input" id="q" type="text" placeholder="Какой специалист или услуга вам нужны?" oninput="applyFilters()">
+        <button class="btn btn-primary" aria-label="Найти"><svg class="icon"><use href="#i-search"/></svg></button>
+      </div>
+      <button class="btn btn-outline btn-sm filters-toggle" onclick="document.getElementById('filtersRow').classList.toggle('open')">Фильтры</button>
+      <div class="filters-row" id="filtersRow">
+        <select class="f-select" id="fCity" onchange="applyFilters()"><option value="">Город: все</option><option>Санкт-Петербург</option><option>Москва</option><option>Великий Новгород</option><option>Екатеринбург</option><option>Казань</option></select>
+        <select class="f-select" id="fCat" onchange="applyFilters()"><option value="">Все категории</option><option>Строительство и ремонт</option><option>Производство и ремесло</option><option>Транспорт</option><option>Юридические услуги</option><option>Бухгалтерия и финансы</option><option>IT и маркетинг</option><option>Образование</option><option>Сельское хозяйство</option><option>Продукты и общепит</option><option>Бытовые услуги</option><option>Работа и кадры</option></select>
+        <select class="f-select" id="fType" onchange="applyFilters()"><option value="">Тип: все</option><option value="service">Услуги</option><option value="product">Товары</option><option value="vacancy">Вакансии</option><option value="resume">Резюме</option></select>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <span class="demo-note">Примеры карточек — будут заменены реальными данными участников</span>
+      <button class="btn btn-secondary btn-sm" onclick="openModal('gateModal')">Подать объявление</button>
+      <span class="catalog-note">Объявления размещают участники Гильдии — после вступления и проверки.</span>
+    </div>
+
+    <div class="cards-grid" id="offers">
+      <div class="offer" data-title="юридические консультации малый бизнес договоры" data-city="Санкт-Петербург" data-cat="Юридические услуги" data-type="service"><div class="ph"><img src="img/offer-01.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Участник Гильдии</span></div><div class="body"><div class="t">Юридические консультации для малого бизнеса</div><div class="m">[Название практики] · Санкт-Петербург</div><div class="p">от 3 500 ₽ <span>/ час</span></div><div class="foot"><span class="cat-tag">Юридические услуги</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+      <div class="offer" data-title="хлеб выпечка пекарня продукты" data-city="Великий Новгород" data-cat="Продукты и общепит" data-type="product"><div class="ph"><img src="img/offer-02.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Личность и реквизиты подтверждены</span></div><div class="body"><div class="t">Хлеб и выпечка собственной пекарни</div><div class="m">[Название пекарни] · Великий Новгород</div><div class="p">от 320 ₽ <span>/ кг</span></div><div class="foot"><span class="cat-tag">Продукты и общепит</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+      <div class="offer" data-title="сайты разработка поддержка it маркетинг" data-city="Екатеринбург" data-cat="IT и маркетинг" data-type="service"><div class="ph"><img src="img/offer-03.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Есть рекомендации</span></div><div class="body"><div class="t">Разработка и поддержка сайтов</div><div class="m">[Название студии] · Екатеринбург</div><div class="p">По договорённости</div><div class="foot"><span class="cat-tag">IT и маркетинг</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+      <div class="offer" data-title="бухгалтерия сопровождение ип ооо отчетность" data-city="Санкт-Петербург" data-cat="Бухгалтерия и финансы" data-type="service"><div class="ph"><img src="img/offer-04.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Личность и реквизиты подтверждены</span></div><div class="body"><div class="t">Бухгалтерское сопровождение ИП и ООО</div><div class="m">[Имя специалиста] · Санкт-Петербург</div><div class="p">от 15 000 ₽ <span>/ месяц</span></div><div class="foot"><span class="cat-tag">Бухгалтерия и финансы</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+      <div class="offer" data-title="вакансия мастер отделочник ремонт работа" data-city="Санкт-Петербург" data-cat="Работа и кадры" data-type="vacancy"><div class="ph"><img src="img/offer-05.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Участник Гильдии</span></div><div class="body"><div class="t">Вакансия: мастер-отделочник</div><div class="m">[Название компании] · Санкт-Петербург</div><div class="p">з/п от 90 000 ₽ <span>/ месяц</span></div><div class="foot"><span class="cat-tag">Работа и кадры</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+      <div class="offer" data-title="резюме маркетолог маркетинг опыт" data-city="Москва" data-cat="IT и маркетинг" data-type="resume"><div class="ph"><img src="img/offer-06.jpg" alt="" onerror="this.onerror=null;this.src=PH"><span class="status">Есть рекомендации</span></div><div class="body"><div class="t">Резюме: маркетолог малого бизнеса</div><div class="m">[Имя] · Москва · опыт 6 лет</div><div class="p">По договорённости</div><div class="foot"><span class="cat-tag">IT и маркетинг</span><a class="link-report" href="#" onclick="openModal('reportModal');return false;">Сообщить о проблеме</a></div></div></div>
+    </div>
+    <div class="empty" id="emptyState">Ничего не найдено. Попробуйте изменить запрос или фильтры.</div>
+
+    <div class="cta-band" style="margin-top:32px;">
+      <div><h2>Не нашли нужного специалиста?</h2><p>Станьте участником Гильдии — и добавьте своё предложение в каталог, или опишите запрос куратору.</p></div>
+      <a class="btn btn-light" href="join.html">Подать заявку</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:12px;"><svg class="brand-mark" style="width:36px;height:36px;"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+        <p>Санкт-Петербург · участники по всей России</p>
+        <p style="margin-top:8px;">Реквизиты: будут добавлены после регистрации НКО.</p>
+      </div>
+      <div><h4>Контакты</h4><p>Email: [появится после запуска домена]</p><p>Телефон: [появится после запуска домена]</p></div>
+      <div><h4>Документы</h4><a href="rules.html">Правила площадки</a><a href="privacy.html">Политика обработки данных</a><a href="join.html">Стать участником</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Гильдия русских предпринимателей</span><span>Держим слово, фиксируем договорённости и отвечаем за свою работу</span></div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="gateModal">
+  <div class="modal">
+    <h3>Объявления размещают участники Гильдии</h3>
+    <p>Чтобы выложить объявление, вакансию или резюме, сначала вступите в Гильдию — так каталог остаётся средой доверия.</p>
+    <ol><li>Оставьте заявку — 5 минут.</li><li>Познакомьтесь с куратором и пройдите проверку.</li><li>Получите карточку и возможность публиковать объявления.</li></ol>
+    <div class="modal-actions"><a class="btn btn-primary" href="join.html">Подать заявку</a><button class="btn btn-outline" onclick="closeModal('gateModal')">Позже</button></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="reportModal">
+  <div class="modal">
+    <h3>Сообщить о проблеме</h3>
+    <p>Жалобы рассматриваются по регламенту: до 5 рабочих дней, при признаках обмана — до 2 рабочих дней.</p>
+    <form class="form" onsubmit="event.preventDefault(); closeModal('reportModal'); this.reset(); toast('Жалоба отправлена модераторам');">
+      <div><label>Причина</label><select required><option value="">Выберите</option><option>Недостоверные данные</option><option>Невыполнение обязательств</option><option>Некачественная услуга или товар</option><option>Другое</option></select></div>
+      <div><label>Описание</label><textarea required placeholder="Дата, сумма, факты, доказательства"></textarea></div>
+      <label class="checkbox"><input type="checkbox" required> Согласен на обработку данных согласно политике</label>
+      <button class="btn btn-primary" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function applyFilters() {
+  const q = document.getElementById('q').value.toLowerCase().trim();
+  const city = document.getElementById('fCity').value;
+  const cat = document.getElementById('fCat').value;
+  const type = document.getElementById('fType').value;
+  let shown = 0;
+  document.querySelectorAll('#offers .offer').forEach(c => {
+    const ok = (!q || c.dataset.title.includes(q)) && (!city || c.dataset.city === city) && (!cat || c.dataset.cat === cat) && (!type || c.dataset.type === type);
+    c.style.display = ok ? '' : 'none';
+    if (ok) shown++;
+  });
+  document.getElementById('emptyState').style.display = shown ? 'none' : 'block';
+}
+</script>
+</body>
+</html>

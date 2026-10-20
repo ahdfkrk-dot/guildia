@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Участники — Гильдия русских предпринимателей</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z' fill='%231F3D2E'/%3E%3Cpath d='M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z' fill='%231F3D2E'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="guild-mark" viewBox="0 0 100 100"><path fill-rule="evenodd" d="M52 6 C69 20 79 40 78 58 C69 53 60 51 52 51 C44 51 34 53 26 58 C28 38 37 19 52 6 Z M48 28 H64 V36 H56 V50 H48 Z" fill="currentColor"/><path d="M18 64 C28 76 72 76 82 64 C79 82 64 92 50 92 C36 92 21 82 18 64 Z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><svg class="brand-mark"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+    <nav class="nav" id="nav">
+      <a href="about.html">О Гильдии</a>
+      <a href="people.html" class="current">Участники</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="meetings.html">Встречи</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-primary" href="join.html">Стать участником</a>
+      <button class="burger" onclick="toggleNav()" aria-label="Меню"><svg class="icon lg"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-head">
+    <span class="region-chip"><svg class="icon sm"><use href="#i-pin"/></svg> Санкт-Петербург · участники по всей России</span>
+    <h1>Участники Гильдии</h1>
+    <p class="sub">Предприниматели, мастера и специалисты, прошедшие процедуру приёма: заявка, знакомство с куратором, проверка данных.</p>
+  </div>
+
+  <section style="padding-top:24px;">
+    <span class="demo-note">Карточки будут заполнены реальными данными участников после сбора согласий</span>
+    <div class="cards-grid">
+      <div class="person"><div class="ph"><img src="img/member-01.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · участник Гильдии</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+      <div class="person"><div class="ph"><img src="img/member-02.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · реквизиты подтверждены</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+      <div class="person"><div class="ph"><img src="img/member-03.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · есть рекомендации</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+      <div class="person"><div class="ph"><img src="img/member-04.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · участник Гильдии</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+      <div class="person"><div class="ph"><img src="img/member-05.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · реквизиты подтверждены</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+      <div class="person"><div class="ph"><img src="img/member-06.jpg" alt="" onerror="this.onerror=null;this.src=PH"></div><div class="body"><span class="name">[Имя Фамилия]</span><span class="meta">[Сфера деятельности]</span><span class="meta">[Город] · есть рекомендации</span><button class="btn btn-outline btn-sm" onclick="openModal('personModal')">Подробнее</button></div></div>
+    </div>
+
+    <div class="cta-band" style="margin-top:36px;">
+      <div><h2>Хотите оказаться среди них?</h2><p>Вступление начинается с короткой заявки и знакомства с куратором. Без обещаний лёгких денег — среда, связи и взаимопомощь.</p></div>
+      <a class="btn btn-light" href="join.html">Подать заявку</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:12px;"><svg class="brand-mark" style="width:36px;height:36px;"><use href="#guild-mark"/></svg><span class="brand-name"><span class="b1">Гильдия</span><span class="b2">русских предпринимателей</span></span></a>
+        <p>Санкт-Петербург · участники по всей России</p>
+        <p style="margin-top:8px;">Реквизиты: будут добавлены после регистрации НКО.</p>
+      </div>
+      <div><h4>Контакты</h4><p>Email: [появится после запуска домена]</p><p>Телефон: [появится после запуска домена]</p></div>
+      <div><h4>Документы</h4><a href="rules.html">Правила площадки</a><a href="privacy.html">Политика обработки данных</a><a href="join.html">Стать участником</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Гильдия русских предпринимателей</span><span>Держим слово, фиксируем договорённости и отвечаем за свою работу</span></div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="personModal">
+  <div class="modal">
+    <h3>[Имя Фамилия]</h3>
+    <p>[Сфера деятельности] · [Город]. Статус: [участник Гильдии / реквизиты подтверждены / есть рекомендации] — пояснение, что именно проверено.</p>
+    <p>Полная карточка с предложениями, кейсами и согласованными контактами откроется после наполнения каталога реальными данными.</p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" href="catalog.html">Смотреть предложения в каталоге</a>
+      <button class="btn btn-outline" onclick="closeModal('personModal')">Закрыть</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
